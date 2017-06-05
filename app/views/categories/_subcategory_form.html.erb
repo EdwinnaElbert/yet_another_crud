@@ -1,0 +1,30 @@
+<%= form_for(@subcategory, remote: true) do |form| %>
+  <% if has_rights?%>
+    <% if @subcategory.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@subcategory.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+        <ul>
+        <% @subcategory.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= form.label :sub_category_name %>
+      <%= form.text_field :sub_category_name, id: :sub_category_name %>
+      <%= form.label :category %>
+      <%= form.collection_select :category_id, Category.order(:category_name), :id, :category_name %>
+    </div>
+    <button class="button-color">
+      <%= form.submit %>
+    </button>
+    <% else %>
+      <div id="access_denied">
+        <p>Sorry, you haven't got required rights to access this page</p>
+      </div>
+    <%end%>
+
+
+<% end %>

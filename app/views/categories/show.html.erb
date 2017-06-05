@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<h3><% @category.category_name %></h3>
+<% @category.id %>
+<% SubCategory.where(category_id: @category.id).each do |sub_category| %>
+  <p>sub_category</p>
+<% end %>
+</br>
+<%= link_to 'New', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

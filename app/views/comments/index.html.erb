@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post</th>
+      <th>Author</th>
+      <th>Author name</th>
+      <th>Comment body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= link_to "#{Post.find(comment.post_id).title}", {controller: "posts", action: "show", id: Post.find(comment.post_id)} %></td>
+        <td><%= comment.author_id %></td>
+        <td><%= comment.author_name || 'Anonymous'%></td>
+        <td><%= comment.comment_body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,27 @@
+<% if @post.comments.count > 0 && comment.id.present? %>
+    <p>
+      <strong>Id:</strong>
+      <%= comment.id %>
+    </p>
+    <p>
+      <strong>Author:</strong>
+      <%= comment.author_id.present? ? comment.author_id : 'anonymous' %>
+    </p>
+
+    <p>
+      <strong>Author name:</strong>
+      <%= comment.author_name.present? ? comment.author_name : 'anonymous' %>
+    </p>
+
+    <p>
+      <strong>Comment body:</strong>
+      <%= comment.comment_body %>
+    </p>
+
+    <p>
+      <strong>Created at:</strong>
+      <%= comment.created_at %>
+    </p>
+    <%= link_to 'Edit', edit_post_comment_path(@post.id) if current_user.present? && comment.author_id == current_user.id && @comment.present? %>
+    <br>
+<% end %>
