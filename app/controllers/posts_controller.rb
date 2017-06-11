@@ -6,6 +6,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @categories = Category.all
+    @subcategories = SubCategory.all
   end
 
   # GET /posts/1
@@ -17,6 +19,7 @@ class PostsController < ApplicationController
   def new
     redirect_to posts_path unless has_rights?
     @post = Post.new
+    @category = Category.new
   end
 
   # GET /posts/1/edit
@@ -26,6 +29,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+
     if has_rights?
       @post = Post.new(post_params)
       respond_to do |format|

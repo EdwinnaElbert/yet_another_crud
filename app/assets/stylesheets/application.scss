@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+ @import 'settings';
+  @media only screen and (max-width: 70em) {
+    .head1 {
+      width: 100%;
+      height: auto !important;
+      background-color: $dark;
+      color: $light_2;
+      padding: 10px 0;
+    }
+     .small-2 > h3:nth-child(1) {
+     display: block !important;
+     float: left !important;
+     font-size: 2em;
+     width: 25%;
+   }
+     div.small-2:nth-child(2) > a:nth-child(-n+3) {
+     display: block !important;
+     float: left !important;
+     background-color: $dark;
+     margin-right: 20px;
+     color: $dark_2;
+   }
+     div.small-2:nth-child(2) > a:nth-child(-n+3):after,
+     div.small-2:nth-child(2) > a:nth-child(-n+3):before {
+     backface-visibility: hidden;
+     border-bottom: 1px solid $medium;
+     bottom: 0px;
+     content: " ";
+     display: block;
+     margin: 0 auto;
+     position: relative;
+     transition: all 350ms ease-in-out;
+     width: 0;
+    }
+
+    div.small-2:nth-child(2) > a:nth-child(-n+3):hover:after,
+    div.small-2:nth-child(2) > a:nth-child(-n+3):hover:before {
+     backface-visibility: hidden;
+     border-color: $medium;
+     transition: width 350ms ease-in-out;
+     width: 100%;
+    }
+
+    div.small-12:nth-child(2) > a:nth-child(-n+3):hover:before {
+     bottom: auto;
+     top: 0;
+     width: 100%;
+    }
+ }
+ @media only screen and (min-width: 70.063em) {
+   .head1 {
+     width: 100%;
+     height: 7% !important;
+     background-color: $dark;
+     color: $light_2;
+   }
+    .small-12 > h3:nth-child(1) {
+    display: block !important;
+    float: left !important;
+    font-size: 3em;
+  }
+   div.small-12:nth-child(2) > a:nth-child(-n+3){
+    display: block !important;
+    float: left !important;
+    font-size: 2em;
+   }
+   div.small-12:nth-child(2) > a:nth-child(-n+3) {
+    display: block !important;
+    float: right !important;
+    font-size: 1.5em;
+    background-color: $medium !important;
+    color: $light;
+    padding: 1em;
+    transition: background-color 500ms linear;
+    margin: 0;
+   }
+
+  div.small-12:nth-child(2) > a:nth-child(-n+3):hover {
+   border-color: $medium;
+   background-color: $dark_2 !important;
+  }
+ }

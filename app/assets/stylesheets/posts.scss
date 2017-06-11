@@ -1,3 +1,24 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'settings';
+.posts-index {
+  background-color: $medium;
+}
+.post {
+  background-color: $light;
+  -webkit-box-shadow: 2px 0px 5px 0px $dark_2;
+  -moz-box-shadow: 2px 0px 5px 0px $dark_2;
+  box-shadow: 2px 0px 5px 0px $dark_2;
+  padding: 0;
+  margin: 0;
+}
+.main_picture {
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+div.post:nth-child(n) {
+  margin: 0;
+  padding: 0;
+}

@@ -1,32 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row posts-index">
+    <div class="small-12 large-4 columns">
+      <%= render 'categories/index'%>
+    </div>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to "#{post.title}", post %></td>
-        <td><%= post.id %></td>
-        <td><%= Category.find(post.category_id).category_name %></td>
-        <td><%= post.created_at %></td>
-        <div>
-          <%= image_tag post.main_picture_url if post.main_picture.file.present? %>
+      <div class="small-12 large-4 columns">
+        <div class='post'>
+          <h3><%= link_to "#{post.title}", post %></h3>
+          <div class="main_picture"><%= image_tag post.main_picture_url if post.main_picture.file.present? %></div>
+          <p><%= Category.find(post.category_id).category_name %> <%= post.created_at %></p>
+          <% if has_rights? %>
+            <p><%= link_to 'Edit', edit_post_path(post) %> <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
+          <p><p>
         </div>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
+</div>
 
 <%= link_to 'New Post', new_post_path if has_rights? %>

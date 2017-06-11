@@ -32,7 +32,7 @@ class CategoriesController < ApplicationController
       @category = Category.new(category_params)
       respond_to do |format|
         if @category.save
-          format.html { redirect_to Category.new, alert: 'Category was successfully created.' }
+          format.html { redirect_to new_post_path, alert: 'Category was successfully created.' }
           format.json { render :show, status: :created, location: @category }
         else
           format.html { render :new }
