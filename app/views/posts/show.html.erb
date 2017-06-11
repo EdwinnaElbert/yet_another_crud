@@ -14,6 +14,10 @@
   <strong>Category: <%= Category.find(@post.category_id).category_name %></strong>
 </p>
 
+<div>
+  <%= image_tag @post.main_picture_url if @post.main_picture.file.present? %>
+</div>
+
 <p>
   <strong>created_at: <%= @post.created_at %></strong>
 </p>

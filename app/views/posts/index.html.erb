@@ -17,6 +17,9 @@
         <td><%= post.id %></td>
         <td><%= Category.find(post.category_id).category_name %></td>
         <td><%= post.created_at %></td>
+        <div>
+          <%= image_tag post.main_picture_url if post.main_picture.file.present? %>
+        </div>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
