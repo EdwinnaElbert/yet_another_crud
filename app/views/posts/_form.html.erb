@@ -15,6 +15,10 @@
     <%= f.collection_select :category_id, Category.order(:category_name), :id, :category_name %>
   </div>
   <div>
+    <%= f.label :sub_category %>
+    <%= f.collection_select :sub_category_id, SubCategory.order(:sub_category_name), :id, :sub_category_name %>
+  </div>
+  <div>
     <%= f.label :main_picture %>
     <%= f.file_field :main_picture %>
   </div>
@@ -25,4 +29,7 @@
     <%= f.submit %>
   </div>
 <% end %>
-  <%= render 'categories/form' %>
+  <% if params[:new] %>
+    <%= render 'categories/form' %>
+    <%= render 'sub_categories/form' %>
+  <% end %>

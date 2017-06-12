@@ -2,6 +2,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <div>
+      <%= f.label :sub_category_name %>
+      <%= f.text_field :sub_category_name %>
+    </div>
+    <div>
+      <%= f.label :category %>
+      <%= f.collection_select :category_id, Category.order(:category_name), :id, :category_name %>
+    </div>
   </div>
 
   <div class="form-actions">

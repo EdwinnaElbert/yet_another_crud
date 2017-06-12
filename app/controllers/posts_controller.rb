@@ -20,6 +20,7 @@ class PostsController < ApplicationController
     redirect_to posts_path unless has_rights?
     @post = Post.new
     @category = Category.new
+    @sub_category = SubCategory.new
   end
 
   # GET /posts/1/edit
