@@ -7,12 +7,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <div class="row head1">
       <div class="small-12 large-4 columns">
         <h3>My Awesome Site</h3>
       </div>
+      <div class="large-4 columns"></div>
       <div class="small-12 large-4 columns">
           <% if current_user.present? %>
             <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>

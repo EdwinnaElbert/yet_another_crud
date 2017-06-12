@@ -1,12 +1,4 @@
 @import 'settings';
-body {
-  margin: 0;
-  padding: 0;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -21,7 +13,6 @@ pre {
 
 a {
   color: $dark;
-
   &:visited {
     color: #666;
   }
@@ -76,4 +67,17 @@ div {
 
 label {
   display: block;
+}
+@media screen and (min-width: 40em) {
+  body {
+    margin: 0;
+    padding: 0 5% 0 10%;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .row {
+    width: 90%;
+    min-width: 90%;
+  }
 }

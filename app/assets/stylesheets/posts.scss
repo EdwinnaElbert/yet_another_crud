@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'settings';
-.posts-index {
+div.row:nth-child(2) /*.posts-index row*/ {
   background-color: $medium;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 .post {
   background-color: $light;
